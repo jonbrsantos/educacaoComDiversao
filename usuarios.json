@@ -33,5 +33,10 @@
         "usuario": "pedro",
         "nome": "pedro",
         "senha": "123"
+    },
+    {
+        "usuario": "teste",
+        "nome": "teste",
+        "senha": "123"
     }
 ]

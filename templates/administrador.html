@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,53 +8,57 @@
 </head>
 <body>
 
-    {% set menssagem = get_flashed_messages() %}
-    {% if menssagem %}
+    {% set mensagem = get_flashed_messages() %}
+    {% if mensagem %}
         <div class="flash_alerta">
-            {{menssagem[0]}}
+            {{ mensagem[0] }}
         </div>
     {% endif %}
-        <h1 class="titulo">administrador</h1>
+
+    <h1 class="titulo">Administrador</h1>
+
     <div id="paginacadastro">
-    <div id="form_fundo">
-        <h1>CADASTRAR USUARIO</h1>
-        <div id="form_frente">
-            <form action="/cadastrarUsuario" id="login" method="post">
-                <label for="nome">NOME</label>
-                <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
-                <label for="senha" id="senha">SENHA</label>
-                <input type="text" name="senha" id="senha" required placeholder="Digite sua senha"><br><br>
-                <button type="submit" id="btn_login">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>CADASTRAR
 
-                </button>
-            </form>
+        <div class="form_fundo">
+            <h1>CADASTRAR USUÁRIO</h1>
+            <div class="form_frente">
+                <form action="/cadastrarUsuario" id="login" method="post">
+                    <label for="nome">NOME</label>
+                    <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"><br><br>
+
+                    <label for="senha">SENHA</label>
+                    <input type="password" name="senha" id="senha" required placeholder="Digite sua senha"><br><br>
+
+                    <button type="submit" id="btn_login">
+                        <span></span><span></span><span></span><span></span>
+                        CADASTRAR
+                    </button>
+                </form>
+            </div>
         </div>
+
+        <div class="form_fundo listaUsuarios">
+            <h1>USUÁRIOS CADASTRADOS</h1>
+            <div class="form_frente listaUsuarios">
+                {% if usuarios %}
+                    {% for c in usuarios %}
+                        <form action="/excluirUsuario" method="post">
+                            <ul>
+                                <input type="hidden" name="usuarioAExcluir" value="{{ c['nome'] }}">
+                                <li><strong>Nome:</strong> {{ c['nome'] }}</li><br>
+                                <li><strong>Senha:</strong> {{ c['senha'] }}</li>
+                            </ul>
+                            <button type="submit">EXCLUIR</button>
+                        </form>
+                        <hr>
+                    {% endfor %}
+                {% else %}
+                    <h2>Não existem usuários cadastrados</h2>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 
-    <div id="form_fundo" class="listaUsuarios">
-        <h1>USUARIOS CADASTRADOS</h1>
-        <div id="form_frente" class="listaUsuarios">
-            {% if usuarios %}
-                {% for c in usuarios %}
-                    <form action="/excluirUsuario" method="post">
-                        <ul>
-                            <input type="hidden" name="usuarioPexcluir" value="{{c}}">
-                            <li>NOME: {{c['nome']}}</li><br>
-                            <li>SENHA: {{c['senha']}}</li>
-                        </ul>
-                        <button type="submit">EXCLUIR</button>
-                    </form>
-                    ------------------------------------------
-                {% endfor %}
-            {% else %}
-            <h1>nao existe usuarios cadastrados</h1>
-            {% endif %}
-        </div>
-    </div>
-    </div>
 </body>
 </html>

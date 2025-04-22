@@ -45,7 +45,7 @@ def login():
     for usuario in usuarios:
         if usuario['nome'] == nome and usuario['senha'] == senha:
             session['aluno'] = usuario['nome']
-            return render_template('select_game.html')
+            return render_template('select_game.html',aluno=session['aluno'])
 
     flash('Usuário inválido')
     return redirect('/')
