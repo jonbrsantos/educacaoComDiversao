@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galinhas na Cerca</title>
+  <link rel="stylesheet" href="../static/css/galinhas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header id="header">
+    <h1>Galinhas na Cerca🐔</h1>
+    <p id="instruction">Conte as galinhas e selecione o número correto!</p>
+  </header>
+
+  <main id="content">
+    <section class="game-area">
+      <div id="fence" class="fence"></div>
+      <div id="feedback" class="feedback"></div>
+      <div id="cards" class="cards-container"></div>
+
+      <div id="score">
+        <p>Acertos: <span id="correct-count">0</span></p>
+        <p>Erros: <span id="error-count">0</span></p>
+        <p>Tempo: <span id="timer">0</span> segundos</p>
+      </div>
+    </section>
+
+    <aside id="menu">
+      <form action="/alfabeto" method="get">
+        <button class="menu-button" type="submit">Alfabeto Divertido</button>
+      </form>
+      <form action="/rimas" method="get">
+        <button class="menu-button" type="submit">Rimas Divertidas</button>
+      </form>
+      <form action="/memoria" method="get">
+        <button class="menu-button" type="submit">Memória com Números</button>
+      </form>
+      <form action="/galinhas" method="get">
+        <button class="menu-button" type="submit">Galinhas na Cerca</button>
+      </form>
+      <form action="/sair" method="get">
+        <button class="menu-button" type="submit">Sair</button>
+      </form>
+    </aside>
+  </main>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Parabéns! Você terminou!</h2>
+      <p>Tempo gasto: <span id="time-spent"></span> segundos</p>
+      <p>Gostaria de jogar novamente ou fechar o jogo?</p>
+      <button id="restart-button">Jogar Novamente</button>
+      <form action="/selectgame" method="get">
+        <button class="menu-button" type="submit">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../static/js/galinhas.js"></script>
+
+</body>
+</html>

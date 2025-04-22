@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('../image/fundo10.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mensagem de alerta (flash message) */
+.flash_alerta {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Container do formulário */
+#form_fundo {
+    background-color: rgba(255, 69, 0, 0.75); /* orangered com transparência */
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Área interna do formulário */
+#form_frente {
+    background-color: white;
+    padding: 20px 30px;
+    margin-top: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-sizing: border-box; /* <- ESSENCIAL */
+}
+
+/* Inputs */
+#login_form input[type="text"],
+#login_form input[type="password"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-sizing: border-box; /* <- ESSENCIAL */
+}
+
+/* Botão de login */
+#btn_login {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#btn_login:hover {
+    background-color: #cc3300;
+}
+
+/* Evita spans invisíveis */
+#btn_login span {
+    display: none;
+}
+
+#head {
+    background: url('../image/fundo10.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+}
+
+#titulo {
+    font-family: 'Fredoka One', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 2.5rem;
+    color: #ff5722;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 0;
+}
