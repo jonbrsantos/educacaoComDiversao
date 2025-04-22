@@ -1,22 +1,37 @@
 [
     {
-        "usuario": "jonathan",
+        "usuario": "Jonathan",
         "nome": "Jonathan",
         "senha": "123"
     },
     {
-        "usuario": "thiago",
+        "usuario": "Thiago",
         "nome": "thiago",
         "senha": "123"
     },
     {
-        "usuario": "jose",
+        "usuario": "Jose",
         "nome": "jose",
         "senha": "123"
     },
     {
-        "usuario": "jorge",
-        "nome": "jorge",
-        "senha": "789"
+        "usuario": "Kelly",
+        "nome": "kelly",
+        "senha": "123"
+    },
+    {
+        "usuario": "renata",
+        "nome": "renata",
+        "senha": "123"
+    },
+    {
+        "usuario": "lais",
+        "nome": "lais",
+        "senha": "123"
+    },
+    {
+        "usuario": "pedro",
+        "nome": "pedro",
+        "senha": "123"
     }
 ]
