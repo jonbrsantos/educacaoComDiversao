@@ -1,38 +1,58 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Educação com Diversão</title>
-    <link rel="stylesheet" href="../static/css/select.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/select.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+  </style>
 
+  </head>
+  <body>
+    <br>
+      <br>
     <div id="header">
-        <h1>Educação com Diversão</h1>
-        <div id="user-info">Bem-vindo(a), {{ aluno }}!</div>
+      <h1></h1>
+      <div id="user-info">Bem-vindo(a), {{ aluno }}!</div>
     </div>
-
+    <br>
+    <br>
+    <br>
     <div id="content">
-        <div id="menu">
-            <form action="/alfabeto" method="get">
-                <button class="menu-button" type="submit">Alfabeto Divertido</button>
-            </form>
-            <form action="/rimas" method="get">
-                <button class="menu-button" type="submit">Rimas Divertidas</button>
-            </form>
-            <form action="/memoria" method="get">
-                <button class="menu-button" type="submit">Memória com Números</button>
-            </form>
-            <form action="/galinhas" method="get">
-                <button class="menu-button" type="submit">Galinhas na Cerca</button>
-            </form>
-            <form action="/sair" method="get">
-                <button class="menu-button" type="submit">Sair</button>
-            </form>
-        </div>
+      <div id="menu">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="/alfabeto" method="get">
+          <button class="menu-button" type="submit">Alfabeto Divertido</button>
+        </form>
+        <form action="/rimas" method="get">
+          <button class="menu-button" type="submit">Rimas divertidas</button>
+        </form>
+        <form action="/memoria" method="get">
+          <button class="menu-button" type="submit">Memoria com números</button>
+        </form>
+        <form action="/complete o quadro" method="get">
+          <button class="menu-button" type="submit">Complete o quadro</button>
+        </form>
+        <form action="/preencha o alfabeto" method="get">
+          <button class="menu-button" type="submit">Preencha o alfabeto</button>
+        </form>
+        <form action="/leitura de Calendário" method="get">
+          <button class="menu-button" type="submit">Leitura de calendário</button>
+        </form>
+        <form action="/galinhas na cerca" method="get">
+          <button class="menu-button" type="submit">Galinhas na cerca</button>
+        </form>
+        <form action="/sair" method="get">
+          <button class="menu-button" type="submit">Sair</button>
+        </form>
+      </div>
     </div>
 
-</body>
+    <script src="../game/select-game.js"></script>
+  </body>
 </html>

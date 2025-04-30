@@ -34,8 +34,8 @@ def login():
     session['logado'] = False
     session['aluno'] = ""
 
-    nome = request.form.get('nome')
-    senha = request.form.get('senha')
+    nome = request.form.get('usuario')
+    senha = request.form.get('password')
 
     if nome == 'admin' and senha == 'admin':
         session['logado'] = True

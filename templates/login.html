@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h1 id="titulo">Aprender brincando: Educação com diversão!</h1>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+    <title>Educação com Diversão</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+    </style>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="icon" href="../static/image/login/icon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
 
     {% set mensagens = get_flashed_messages() %}
@@ -16,29 +21,28 @@
             {{ mensagens[0] }}
         </div>
     {% endif %}
-
-    <div id="form_fundo">
-        <h1>Login</h1>
-
-        <div id="form_frente">
-            <form action="{{ url_for('login') }}" method="POST" id="login_form">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" required placeholder="Digite seu nome" autocomplete="off"><br><br>
-
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" required placeholder="Digite sua senha" autocomplete="off"><br><br>
-
-                <button type="submit" id="btn_login">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Entrar
-                </button>
-            </form>
-        </div>
-    </div>
-
+    
+    <section class="container">
+        <form action="{{ url_for('login') }}" method="POST" id="login_form">
+            <h1>Login</h1>
+             <div class="caixa-input">
+                <input type="text"placeholder="Usuário" id="usuario" name="usuario" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="caixa-input">
+                 <input type="password" placeholder="Senha" id="password" name="password" required>
+                 <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class= "caixa-relembre">
+                    <label><input type= "checkbox">Relembre-me</label>
+                    <a href="#"> Esqueceu a senha?</a>
+                    </div>
+                    <br>
+                    <button type="submit" class="botao">Entrar</button>
+                <div class="caixa-registre">
+                    <p> Não possui uma conta? <a href= "#">Registre-se</a></p>
+                </div>
+    </form>
+    </section>
 </body>
-
 </html>
