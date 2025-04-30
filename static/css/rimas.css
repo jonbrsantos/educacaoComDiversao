@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-    color: #ff6347;
+    color: #8600d4bb;
     font-size: 2.5em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px #aaa;
@@ -159,18 +159,19 @@ button:hover {
 }
 
 .menu-button {
-    width: 200px;
-    height: 80px;
+    width: 260px;
+    height: 90px;
     margin: 10px 0;
     opacity: 2;
-    padding: 15px;
+    padding: 16px;
     font-size: 18px;
     border: none;
     border-radius: 10px;
-    background-color: #FF6347;
+    background-color: #a647ff;
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease;
+    font-family: "DynaPuff", system-ui;
 }
 
 .menu-button:hover {
