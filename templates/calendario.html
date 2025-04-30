@@ -3,23 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIMAS DIVERTIDAS</title>
-    <link rel="stylesheet" href="../static/css/rimas.css">
+    <title>Leitura de Calendário</title>
+    <link rel="stylesheet" href="../static/css/calendario.css">
 </head>
 <body>
-    <div id="content">    
-        <div class="game-container">
-            <h1>RIMAS DIVERTIDAS</h1>
-            <p id="instruction">OUÇA A PALAVRA E ESCOLHA A FIGURA CORRETA:</p>
-            <button id="play-sound">OUVIR PALAVRA</button>
-            <div id="images" class="images-container"></div>
+    <div id="content">
+        <div class="game-container" id="game-container">
+            <h1>Leitura de Calendário</h1>
+        
+            <!-- Calendário -->
+            <div id="calendar" class="calendar-container"></div>
+        
+            <!-- Pergunta e opções -->
+            <p id="question"></p>
+            <div id="options" class="options-container"></div>
+        
+            <!-- Feedback, placar e timer -->
             <p id="feedback"></p>
             <div id="score">
-                <p>ACERTOS: <span id="correct-count">0</span></p>
-                <p>ERROS: <span id="error-count">0</span></p>
-                <p>TEMPO: <span id="timer">0</span> segundos</p>
+              <span>Acertos: <span id="correct-count">0</span></span>
+              <span>Erros: <span id="error-count">0</span></span>
+              <span>Tempo: <span id="timer">0</span>s</span>
+            </div>
+          </div>
+        
+          <!-- Popup de resultado -->
+          <div id="popup" class="popup hidden">
+            <div class="popup-content">
+              <h2>🏆 Resultado</h2>
+              <p>Você acertou <span id="final-correct">0</span> de 5</p>
+              <p>Tempo gasto: <span id="final-time">0</span>s</p>
+              <button id="restart-button">REINICIAR</button>
+              <button id="close-button">FECHAR</button>
             </div>
         </div>
+
         <aside id="menu">
             <form action="/alfabeto" method="get">
                 <button class="menu-button" type="submit">Alfabeto divertido</button>
@@ -47,12 +65,11 @@
             </form>
         </aside>
     </div>
-    </div>
     <div id="popup" class="popup hidden">
         <div class="popup-content">
-            <h2>PARABÉNS! VOCÊ TERMINOU O JOGO!</h2>
-            <p>ACERTOS: <span id="final-correct-count"></span></p>
-            <p>ERROS: <span id="final-error-count"></span></p>
+            <h2>Parabéns! Você terminou o jogo!</h2>
+            <p>Acertos: <span id="final-correct-count"></span></p>
+            <p>Erros: <span id="final-error-count"></span></p>
             <p>GOSTARIA DE JOGAR NOVAMENTE OU FECHAR O JOGO?</p>
             <button id="restart-button">JOGAR NOVAMENTE</button>
             <form action="/selectgame" method="get">
@@ -60,6 +77,6 @@
             </form>
         </div>
     </div>
-    <script src="../static/js/rimas.js"></script>
+    <script src="../static/js/calendario.js"></script>
 </body>
 </html>

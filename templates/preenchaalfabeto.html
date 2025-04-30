@@ -1,25 +1,42 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIMAS DIVERTIDAS</title>
-    <link rel="stylesheet" href="../static/css/rimas.css">
+    <title>Leitura de Calendário</title>
+    <link rel="stylesheet" href="../static/css/preenchaalfabeto.css">
 </head>
+
 <body>
-    <div id="content">    
-        <div class="game-container">
-            <h1>RIMAS DIVERTIDAS</h1>
-            <p id="instruction">OUÇA A PALAVRA E ESCOLHA A FIGURA CORRETA:</p>
-            <button id="play-sound">OUVIR PALAVRA</button>
-            <div id="images" class="images-container"></div>
+    <main id="content">
+        <div class="game-container" id="game-container">
+            <h1>PRENCHA O ALFABETO</h1>
+            <p id="instruction">Arraste as letras faltantes até a posição correta:</p>
+
+            <div id="alphabet-container" class="alphabet-container"></div>
+
+            <div id="draggables" class="letters-container"></div>
+
             <p id="feedback"></p>
             <div id="score">
-                <p>ACERTOS: <span id="correct-count">0</span></p>
-                <p>ERROS: <span id="error-count">0</span></p>
-                <p>TEMPO: <span id="timer">0</span> segundos</p>
+                <span>Acertos: <span id="correct-count">0</span></span>
+                <span>Erros: <span id="error-count">0</span></span>
+                <span>Tempo: <span id="timer">0</span>s</span>
             </div>
         </div>
+
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <h2>🎉 Você venceu!</h2>
+                <p>Tempo gasto: <span id="time-spent"></span>s</p>
+                <p>Deseja reiniciar ou fechar?</p>
+                <div class="game-container" id="game-container">
+                    <button id="restart-button">REINICIAR</button>
+                    <button id="close-button">FECHAR</button>
+                </div>
+            </div>
+        </div>
+
         <aside id="menu">
             <form action="/alfabeto" method="get">
                 <button class="menu-button" type="submit">Alfabeto divertido</button>
@@ -46,20 +63,12 @@
                 <button class="menu-button" type="submit">Sair</button>
             </form>
         </aside>
-    </div>
-    </div>
-    <div id="popup" class="popup hidden">
-        <div class="popup-content">
-            <h2>PARABÉNS! VOCÊ TERMINOU O JOGO!</h2>
-            <p>ACERTOS: <span id="final-correct-count"></span></p>
-            <p>ERROS: <span id="final-error-count"></span></p>
-            <p>GOSTARIA DE JOGAR NOVAMENTE OU FECHAR O JOGO?</p>
-            <button id="restart-button">JOGAR NOVAMENTE</button>
-            <form action="/selectgame" method="get">
-                <button class="menu-button" type="submit">FECHAR</button>
-            </form>
-        </div>
-    </div>
-    <script src="../static/js/rimas.js"></script>
+    </main>
+
+    <script src="../static/js/preenchaalfabeto.js"></script>
 </body>
+
 </html>
+<div id="content">
+
+    <!DOCTYPE html>

@@ -103,6 +103,18 @@ def memoria():
 def galinhas():
     return render_template('galinhas.html')
 
+@app.route('/calendario', methods=['GET'])
+def calendario():
+    return render_template('calendario.html')
+
+@app.route('/quadro', methods=['GET'])
+def quadro():
+    return render_template('quadro.html')
+
+@app.route('/preenchaalfabeto', methods=['GET'])
+def preenchaalfabeto():
+    return render_template('preenchaalfabeto.html')
+
 @app.route('/sair')
 def sair():
     session.clear()

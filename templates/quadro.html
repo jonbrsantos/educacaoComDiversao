@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESCUBRA A FIGURA FALTANTE</title>
+  <link rel="stylesheet" href="../static/css/quadro.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main id="content">
+    <div class="game-container" id="game-container">
+      <h1>DESCUBRA A FIGURA FALTANTE</h1>
+      <p id="instruction">ARRASTE A FIGURA QUE COMPLETA O PADRÃO:</p>
+
+      <div id="grid" class="grid-container"></div>
+      <div id="palette-container" class="palette-container"></div>
+
+      <p id="feedback"></p>
+      <div id="score">
+        <span>Acertos: <span id="correct-count">0</span></span>
+        <span>Erros: <span id="error-count">0</span></span>
+        <span>Tempo: <span id="timer">0</span>s</span>
+      </div>
+    </div>
+
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <h2>🎉 PARABÉNS!</h2>
+        <p>VOCÊ COMPLETOU EM: <span id="time-spent"></span>s</p>
+        <p>DESEJA JOGAR NOVAMENTE OU FECHAR?</p>
+        <button id="restart-button">REINICIAR</button>
+        <button id="close-button">FECHAR</button>
+      </div>
+    </div>
+
+    <aside id="menu">
+      <form action="/alfabeto" method="get">
+        <button class="menu-button" type="submit">Alfabeto divertido</button>
+      </form>
+      <form action="/rimas" method="get">
+        <button class="menu-button" type="submit">Rimas divertidas</button>
+      </form>
+      <form action="/memoria" method="get">
+        <button class="menu-button" type="submit">Memoria com números</button>
+      </form>
+      <form action="/galinhas" method="get">
+        <button class="menu-button" type="submit">Galinhas na cerca</button>
+      </form>
+      <form action="/calendario" method="get">
+        <button class="menu-button" type="submit">Aprenda o calendário</button>
+      </form>
+      <form action="/quadro" method="get">
+        <button class="menu-button" type="submit">Preencha o quadro</button>
+      </form>
+      <form action="/preenchaalfabeto" method="get">
+        <button class="menu-button" type="submit">Preencha o alfabeto</button>
+      </form>
+      <form action="/sair" method="get">
+        <button class="menu-button" type="submit">Sair</button>
+      </form>
+    </aside>
+  </main>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Parabéns! Você terminou!</h2>
+      <p>Tempo gasto: <span id="time-spent"></span> segundos</p>
+      <p>Gostaria de jogar novamente ou fechar o jogo?</p>
+      <button id="restart-button">Jogar Novamente</button>
+      <form action="/selectgame" method="get">
+        <button class="menu-button" type="submit">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../static/js/quadro.js"></script>
+
+</body>
+
+</html>
