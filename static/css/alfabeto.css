@@ -1,14 +1,27 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: "DynaPuff", system-ui;
     background: url('../image/fundo10.jpg') no-repeat center center fixed;
     background-size: cover;
-    display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     flex-direction: column;
 }
+
+/*site responsivo*/
+.body {
+    display: flex;
+    width:100%;
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 768px){
+      .body{
+          width:100%;
+          flex-direction: column;
+          background: url('../image/fundo10.jpg')no-repeat center center fixed;
+          background-size: cover;
+               }
+  }
 
 .game-container {
     text-align: center;
@@ -20,16 +33,21 @@ body {
 }
 
 h1 {
-    color: #8600d4bb;
+    color: #FF4500;
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #aaa;
+    text-shadow: 2px 2px 4px #f3f3f3ec;
+    margin-left:350px;
 }
+
 
 #instruction {
     font-size: 1.5em;
-    color: #4682b4;
+    color: #8B008B;
     margin-bottom: 20px;
+    text-shadow: 1px 2px 6px #ffffff;
+    position: relative;
+    margin-left:190px;
 }
 
 .letters-container, .images-container {
@@ -44,9 +62,10 @@ h1 {
 }
 
 .letter, .image {
-    padding: 20px;
-    background: rgba(100, 100, 255, 0.5); /*ajuste da opacidade*/
+    padding: 25px;
+    background: rgba(103, 103, 196, 0.5); /*ajuste da opacidade*/
     color: white;
+    font-family:Arial, Helvetica, sans-serif;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -63,12 +82,12 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px; /* Padronizar o tamanho da imagem */
+    width: 140px; /* Padronizar o tamanho da imagem */
 }
 
 .image img {
     width: 100%;
-    height: 250px;
+    height: 240px;
     object-fit: contain;
     margin-bottom: 5px;
 }
@@ -76,15 +95,19 @@ h1 {
 #feedback {
     margin-top: 20px;
     font-size: 1.5em;
-    color: #32cd32;
+    color: #FF4500;
     text-shadow: 1px 1px 2px #aaa;
+    text-align: center;
 }
 
 #score {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #4682b4;
-    text-shadow: 1px 1px 2px #aaa; 
+    margin-top: 22px;
+    font-size: 1.4em;
+    color: #0a6ec0;;
+    position: relative;
+    text-shadow: 1px 1px 5px #f3efef; 
+    text-align: center;
+
 }
 
 .popup {
@@ -110,14 +133,14 @@ h1 {
 .popup-content h2 {
     margin-bottom: 20px;
     font-size: 2em;
-    color: #FF6347;
+    color: #FF4500;
     text-shadow: 2px 2px 4px #aaa;
 }
 
 .popup-content button {
     padding: 15px 30px;
     margin: 10px;
-    background-color: #4caf50;
+    background-color:  #1128f8fd;
     color: white;
     border: none;
     border-radius: 10px;
@@ -127,7 +150,7 @@ h1 {
 }
 
 .popup-content button:hover {
-    background-color: #45a049;
+    background-color:  #1128f8fd;
     transform: scale(1.1);
 }
 
@@ -146,25 +169,27 @@ h1 {
 }
 
 #menu {
-    width: 200px;
+    width: 100px;
     background: url('../image/fundo10.jpg') no-repeat center center fixed;
     background-size: cover;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .menu-button {
-    width: 260px;
-    height: 90px;
-    margin: 10px 0;
+    width: 200px;
+    height: 100px;
+    margin: 2px 30px 15px;
+    position: relative;
+    top: -45px;
     opacity: 2;
     padding: 16px;
     font-size: 18px;
     border: none;
     border-radius: 10px;
-    background-color: #a647ff;
+    background-color:  #FF4500;
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -173,4 +198,5 @@ h1 {
 
 .menu-button:hover {
     transform: scale(1.1);
-}
+    background-color:#9932CC;
+} 
