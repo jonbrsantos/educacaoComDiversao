@@ -1,5 +1,5 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: "DynaPuff", system-ui;
     background: url('../image/fundo10.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
@@ -11,6 +11,22 @@ body {
     flex-direction: column;
 }
 
+/*site responsivo*/
+.body {
+    display: flex;
+    width:100%;
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 768px){
+      .body{
+          width:100%;
+          flex-direction: column;
+          background: url('../image/fundo10.jpg')no-repeat center center fixed;
+          background-size: cover;
+               }
+  }
+
+
 #content {
     display: flex;
     flex-direction: row;
@@ -20,10 +36,15 @@ body {
 }
 
 #instruction {
-    font-size: 1.5em;
-    color: #4682b4;
-    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #7a3005;
+    margin-bottom: 25px;
+    text-align:center;
+    text-shadow: 2px 2px 6px #f3f3f3ec;
+    text-align:center;
+    margin: 85px -730px 1px;
 }
+
 
 .container {
     background: rgba(255, 255, 255, 0.85);
@@ -36,17 +57,19 @@ body {
 }
 
 h1 {
-    color: #8600d4bb;
-    font-size: 2.5em;
+    color:#FF4500;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #aaa;
+    text-shadow: 1px 2px 7px #f3f3f3ec;
+    margin: 19px 150px 10px;
 }
+
 
 header {
     display: flex;
-    justify-content: space-around;
+    text-align: center;
+    margin: 6px 170px 10px;
     font-size: 1.2em;
-    margin-bottom: 1px;
+    margin-bottom:30px;
 }
 
 .game-area {
@@ -127,15 +150,17 @@ header {
 }
 
 .menu-button {
-    width: 260px;
-    height: 90px;
+    width: 240px;
+    height: 100px;
     margin: 10px 0;
+    position: relative;
+    top: -50px;
     opacity: 2;
     padding: 16px;
     font-size: 18px;
     border: none;
     border-radius: 10px;
-    background-color: #a647ff;
+    background-color: #FF4500;
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -144,6 +169,8 @@ header {
 
 .menu-button:hover {
     transform: scale(1.1);
+    background-color:#BA55D3;
+
 }
 
 .popup {
@@ -197,7 +224,7 @@ header {
 #score {
     margin-top: 5px;
     font-size: 1.5em;
-    color: #4682b4;
+    color: #156eb8;
     text-shadow: 1px 1px 2px #aaa;
     display: flex;
     justify-content: center;
