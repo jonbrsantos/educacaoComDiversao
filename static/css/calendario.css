@@ -1,14 +1,14 @@
 :root {
     --bg-page: #f5f5f5;
-    --bg-card: #ffffff;
-    --primary: #4caf50;
+    --bg-card: #ffffff57;
+    --primary:#ff4400f5;    ;
     --secondary: #4682b4;
     --accent: #ff6347;
-    --error: #b22222;
+    --error: #5422b2;
     --text-main: #333333;
     --text-light: #888888;
     --shadow: rgba(0, 0, 0, 0.15);
-    --font-main: 'Comic Sans MS', cursive, sans-serif;
+    --font-main: "DynaPuff", system-ui;
   
     /* Tamanhos base e espaçamentos */
     --cell-size: 40px;       /* tamanho fixo das células */
@@ -26,7 +26,7 @@
   
   /* corpo e container */
   body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: "DynaPuff", system-ui;
     background: url('../image/fundo10.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
@@ -60,10 +60,10 @@
   /* título */
   h1 {
     color: #8600d4bb;
-    font-size: 2.5em;
+    font-size: 2.3em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #aaa;
-}
+    text-shadow: 2px 2px 5px #dfdddd;
+  }
   
   /* calendário */
   .calendar-container {
@@ -76,8 +76,7 @@
   }
   
   .calendar-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.3rem;
     color: var(--secondary);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
@@ -88,6 +87,7 @@
     grid-template-columns: repeat(7, var(--cell-size));
     gap: var(--cell-gap);
     justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
   }
   
   .day-name,
@@ -115,7 +115,7 @@
   /* pergunta */
   #question {
     font-size: var(--question-font);
-    font-weight: bold;
+    font-family: "DynaPuff", system-ui;
     color: var(--primary);
     margin: 1.5rem 0 1rem;
     text-transform: uppercase;
@@ -168,6 +168,7 @@
   #timer {
     font-weight: bold;
     color: var(--secondary);
+    font-size: 20px;
   }
   
   /* popup */
@@ -256,15 +257,15 @@
 }
 
 .menu-button {
-  width: 260px;
-  height: 90px;
+  width: 280px;
+  height: 100px;
   margin: 10px 0;
   opacity: 2;
   padding: 16px;
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  background-color: #a647ff;
+  background-color: #FF4500;
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -273,4 +274,6 @@
 
 .menu-button:hover {
     transform: scale(1.1);
+    background-color:#9932CC;
+
 }
