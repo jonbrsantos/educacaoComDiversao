@@ -79,6 +79,26 @@ def cadastrarUsuario():
     # Se for GET, retorna o formulário de cadastro
     return render_template('cadastro_usuario.html')
 
+@app.route('/editarUsuario/<int:id>', methods=['GET', 'POST'])
+def editarUsuario(id):
+    usuario = Usuario.query.get_or_404(id)
+
+    if request.method == 'POST':
+        usuario.nome = request.form.get('nome')
+        usuario.email = request.form.get('email')
+        usuario.senha = request.form.get('senha')
+        usuario.tipo = request.form.get('tipo')
+
+        db.session.commit()
+        flash(f'Usuário {usuario.nome} atualizado com sucesso!')
+        return redirect('/admin')
+    
+    if request.method == 'GET':
+        return render_template('editar_usuario.html', usuario=usuario)
+
+    return render_template('editar_usuario.html', usuario=usuario)
+
+
 @app.route('/registrarUsuario', methods=['POST'])
 def registrarUsuario():
     nome = request.form.get('nome')
@@ -95,7 +115,7 @@ def registrarUsuario():
 
     return redirect('/')
 
-@app.route('/excluirUsuario', methods=['POST'])
+@app.route('/excluirUsuario', methods=['POST', 'DELETE'])
 def excluirUsuario():
     if session.get('logado'):
         usuario_id = request.form.get('usuario_id')
@@ -140,6 +160,7 @@ def quadro():
 @app.route('/preenchaalfabeto', methods=['GET'])
 def preenchaalfabeto():
     return render_template('preenchaalfabeto.html')
+
 
 @app.route('/sair')
 def sair():

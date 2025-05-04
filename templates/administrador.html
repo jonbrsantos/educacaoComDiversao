@@ -51,16 +51,22 @@
             <div class="form_frente listaUsuarios">
                 {% if usuarios %}
                     {% for usuario in usuarios %}
-                        <form action="/excluirUsuario" method="post">
-                            <ul>
-                                <input type="hidden" name="usuario_id" value="{{ usuario.id }}">
-                                <li><strong>Nome:</strong> {{ usuario.nome }}</li>
-                                <li><strong>Email:</strong> {{ usuario.email }}</li>
-                                <li><strong>Tipo:</strong> {{ usuario.tipo }}</li>
-                            </ul>
-                            <button type="submit">EXCLUIR</button>
-                        </form>
-                        <hr>
+                    <ul>
+                        <li><strong>Nome:</strong> {{ usuario.nome }}</li>
+                        <li><strong>Email:</strong> {{ usuario.email }}</li>
+                        <li><strong>Tipo:</strong> {{ usuario.tipo }}</li>
+                    </ul>
+                    
+                    <form action="/excluirUsuario" method="post" style="display:inline-block;">
+                        <input type="hidden" name="usuario_id" value="{{ usuario.id }}">
+                        <button type="submit">EXCLUIR</button>
+                    </form>
+                    
+                    <form action="/editarUsuario/{{ usuario.id }}" method="get" style="display:inline-block;">
+                        <button type="submit">EDITAR</button>
+                    </form>
+                    
+                    <hr>
                     {% endfor %}
                 {% else %}
                     <h2>Não existem usuários cadastrados</h2>

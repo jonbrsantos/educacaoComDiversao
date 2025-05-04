@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITAR USUÁRIO</title>
+    <link rel="stylesheet" href="../static/css/administrador.css">
+</head>
+<body>
+
+    {% set mensagem = get_flashed_messages() %}
+    {% if mensagem %}
+        <div class="flash_alerta">
+            {{ mensagem[0] }}
+        </div>
+    {% endif %}
+
+    <h1 class="titulo">Editar Usuário</h1>
+
+    <div id="paginacadastro">
+        <div class="form_fundo">
+            <h1>ALTERAR DADOS DO USUÁRIO</h1>
+            <div class="form_frente">
+                <form method="POST">
+                    <label for="nome">NOME</label>
+                    <input type="text" name="nome" id="nome" value= "{{ usuario.nome }}" required><br><br>
+
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" id="email" value= "{{ usuario.email }}" required><br><br>
+
+                    <label for="senha">SENHA</label>
+                    <input type="password" name="senha" id="senha" value= "{{ usuario.senha }}" required><br><br>
+
+                    <label for="tipo">TIPO</label>
+                    <select name="tipo" id="tipo" required>
+                        <option value="usuario" {% if usuario.tipo == 'usuario' %}selected{% endif %}>Usuário</option>
+                        <option value="admin" {% if usuario.tipo == 'admin' %}selected{% endif %}>Administrador</option>
+                    </select><br><br>
+
+                    <button type="submit" id="btn_login">
+                        <span></span><span></span><span></span><span></span>
+                        SALVAR ALTERAÇÕES
+                    </button>
+                </form>
+                <br>
+                <a href="/admin">
+                    <button id="btn_login">
+                        <span></span><span></span><span></span><span></span>
+                        CANCELAR
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
