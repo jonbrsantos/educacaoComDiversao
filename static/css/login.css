@@ -3,7 +3,7 @@ body {
     display:flex;
     align-items:flex-end;
     justify-content: center;
-    min-height: 120vh;
+    min-height: 100vh;
     background:url(../image/login/fundo12.jpg) no-repeat;
     background-size:cover;
     background-position: center;
@@ -12,15 +12,19 @@ body {
 }
 
 .container {
-   width: 500px;
+   width: 450px;
+   position: relative;
+   justify-content: space-around;
+   margin-left: -745px;
+   top:270px;
    background: transparent;
    border:solid 2px rgba(225, 255, 255, .2);
    backdrop-filter: blur(10px);
-   box-shadow: 10 10 15px  #0000003e;
+   box-shadow: 10 10 10px  #0000003e;
    color: #8600d4bb;
    border-radius: 10px;
    padding: 20px 20px;
-   margin-bottom: 250px;
+   margin-bottom: 280px;
 }
 
 .container h1 {
@@ -31,8 +35,8 @@ body {
 
 .container .caixa-input {
    position:relative;
-   width: 85%;
-   height: 15px;
+   width: 80%;
+   height: 8px;
    margin: 60px 0;
 }
 
