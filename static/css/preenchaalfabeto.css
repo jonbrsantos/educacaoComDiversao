@@ -1,14 +1,14 @@
 :root {
     --bg-page: #e8f4fc;
-    --bg-card: #ffffff;
-    --primary: #4caf50;
+    --bg-card: #ffffffb9;
+    --primary: #06a106;
     --secondary: #4682b4;
-    --accent: #ff6347;
+    --accent: #fa2525f3;
     --error: #b22222;
     --text-main: #333333;
     --text-light: #666666;
     --shadow: rgba(0, 0, 0, 0.1);
-    --font-main: 'Comic Sans MS', cursive, sans-serif;
+    --font-main: "DynaPuff", system-ui;
   }
   
   * {
@@ -18,7 +18,7 @@
   }
   
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: "DynaPuff", system-ui;
     background: url('../image/fundo10.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
@@ -39,8 +39,10 @@ body {
 }
 
 #instruction {
-    font-size: 1.5em;
-    color: #4682b4;
+    font-family: "DynaPuff", system-ui;
+    color:#104E8B;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 5px #f0ebeb;
     margin-bottom: 10px;
 }
 
@@ -54,11 +56,12 @@ body {
     text-align: center;
 }
 
-h1 {
-  color: #8600d4bb;
+h1   {
+  font-family: "DynaPuff", system-ui;
+  color:  #fa2525f3; 
   font-size: 2.5em;
+  text-shadow: 2px 2px 5px #fdfcfc;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px #aaa;
 }
 
 header {
@@ -268,7 +271,7 @@ header {
 .feedback {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #FF6347;
+    color: #6410d1;
     text-align: center;
     min-height: 30px; /* Mantém um espaço fixo mesmo sem texto */
 }
@@ -285,15 +288,15 @@ header {
 }
 
 .menu-button {
-  width: 260px;
-  height: 90px;
+  width: 280px;
+  height: 100px;
   margin: 10px 0;
   opacity: 2;
   padding: 16px;
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  background-color: #a647ff;
+  background-color:  #FF4500;
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -302,6 +305,7 @@ header {
 
 .menu-button:hover {
     transform: scale(1.1);
+    background-color: #9932CC;
 }
 
 .popup {
@@ -355,7 +359,7 @@ header {
 #score {
     margin-top: 5px;
     font-size: 1.5em;
-    color: #4682b4;
+    color: #0a6ec0;
     text-shadow: 1px 1px 2px #aaa;
     display: flex;
     justify-content: center;

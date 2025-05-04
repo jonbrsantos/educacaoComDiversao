@@ -1,15 +1,29 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: "DynaPuff", system-ui;
     background: url('../image/fundo10.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin: 25px;
     flex-direction: column;
 }
 
+/*site responsivo*/
+.body {
+    display: flex;
+    width:100%;
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 768px){
+      .body{
+          width:100%;
+          flex-direction: column;
+          background: url('../image/fundo10.jpg')no-repeat center center fixed;
+          background-size: cover;
+               }
+  }
+  
 .game-container {
     text-align: center;
     background: rgba(255, 255, 255, 0.1); /*ajuste da opacidade*/
@@ -20,17 +34,18 @@ body {
 }
 
 h1 {
-    color: #8600d4bb;
+    color: #FF4500;
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #aaa;
+    text-shadow: 1px 2px 5px #fffefe;
 }
 
 #instruction {
-    font-size: 1.5em;
-    color: #4682b4;
+    font-size: 1.6em;
+    font-family: "DynaPuff", system-ui;
+    color: #B03060;
     margin-bottom: 20px;
-}
+    text-shadow: 1px 1px 8px #fffefe;}
 
 button {
     padding: 10px 20px;
@@ -88,10 +103,11 @@ button:hover {
 }
 
 #score {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #4682b4;
-    text-shadow: 1px 1px 2px #aaa;
+    font-size: 1.2em;
+    color: #156db6;
+    display: flex;
+    justify-content: space-around;
+    text-shadow: 1px 1px 10px #fefeff;
 }
 
 .popup {
@@ -124,7 +140,7 @@ button:hover {
 .popup-content button {
     padding: 15px 30px;
     margin: 10px;
-    background-color: #4caf50;
+    background-color:  #7600ad;
     color: white;
     border: none;
     border-radius: 10px;
@@ -134,7 +150,7 @@ button:hover {
 }
 
 .popup-content button:hover {
-    background-color: #45a049;
+    background-color: #19106d;;
     transform: scale(1.1);
 }
 
@@ -159,15 +175,15 @@ button:hover {
 }
 
 .menu-button {
-    width: 260px;
-    height: 90px;
+    width: 240px;
+    height: 100px;
     margin: 10px 0;
     opacity: 2;
     padding: 16px;
     font-size: 18px;
     border: none;
     border-radius: 10px;
-    background-color: #a647ff;
+    background-color:#FF4500;
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -176,4 +192,5 @@ button:hover {
 
 .menu-button:hover {
     transform: scale(1.1);
+    background-color: #9932CC;
 }

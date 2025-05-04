@@ -10,7 +10,7 @@ body {
 }   
 
 #header {
-    background: url('../image/select/fundo13.jpg') no-repeat 200px;
+    background: url('../image/select/fundo13.jpg') no-repeat 300px;
     background: size cover;
     padding: 10px;
     position: fixed;
@@ -22,10 +22,11 @@ body {
     color: rgb(0, 0, 0);
     top: 40;
     position: relative; 
-    left: 1200;
+    left: 900px;
     font-size: 20px;
     color:	#9932CC;
 }
+
 #content {
     display: flex;
     flex-grow: 5;
@@ -66,7 +67,7 @@ body {
     font-size: 18px;
     border: none;
     border-radius: 10px;
-    background-color: #a647ff;
+    background-color: #FF4500;
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -75,6 +76,7 @@ body {
 
 .menu-button:hover {
     transform: scale(1.1);
+    background-color: #9932CC;
 }
 
 #display-image {
