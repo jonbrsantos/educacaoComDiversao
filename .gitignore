@@ -1,2 +1,4 @@
 /SQL
 .venv
+meubanco.db
+local.db

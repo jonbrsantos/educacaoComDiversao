@@ -1,0 +1,56 @@
+[
+    {
+        "nome": "Admin",
+        "email": "admin@univesp.com",
+        "senha": "admin",
+        "tipo": "admin"
+    },
+    {
+        "nome": "Admin2",
+        "email": "admin2@univesp.com",
+        "senha": "admin",
+        "tipo": "admin"
+    },
+    {
+        "nome": "jonathan",
+        "email": "jonathan@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    },
+    {
+        "nome": "aluno",
+        "email": "aluno@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    },
+    {
+        "nome": "kelly",
+        "email": "kelly@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    },
+    {
+        "nome": "pedro",
+        "email": "pedro@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    },
+    {
+        "nome": "renata",
+        "email": "renata@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    },
+        {
+        "nome": "lais",
+        "email": "lais@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    },
+    {
+        "nome": "thiago",
+        "email": "thiago@univesp.com.br",
+        "senha": "123",
+        "tipo": "usuario"
+    }
+]

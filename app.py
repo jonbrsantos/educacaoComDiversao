@@ -1,29 +1,35 @@
 from flask import Flask, render_template, redirect, request, flash, session
-import json
-import ast
+from config import Config
+from models import db, Usuario, seed_usuarios
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
-# Em produção, o ideal é usar variável de ambiente para a SECRET_KEY
-app.config['SECRET_KEY'] = 'senha_admin'  # depois no Render a gente muda
+db.init_app(app)
 
-# Função auxiliar para carregar usuários
-def ler_usuarios():
-    with open('usuarios.json') as usuariosTemp:
-        return json.load(usuariosTemp)
+with app.app_context():
+    db.create_all()
+    seed_usuarios()
 
 @app.route('/')
 def home():
     session['logado'] = False
     return render_template('login.html')
 
+# Cria as tabelas e popula o banco se necessário
+with app.app_context():
+    db.create_all()
+    seed_usuarios()
+
+
 @app.route('/admin')
 def admin():
     if session.get('logado'):
-        usuarios = ler_usuarios()
+        usuarios = Usuario.query.all()
         return render_template("administrador.html", usuarios=usuarios)
     else:
         return redirect('/')
+
 
 @app.route('/selectgame', methods=['POST', 'GET'])
 def selectgame():
@@ -31,61 +37,81 @@ def selectgame():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    session['logado'] = False
-    session['aluno'] = ""
-
-    nome = request.form.get('usuario')
+    session.clear()
+    email = request.form.get('usuario')
     senha = request.form.get('password')
 
-    if nome == 'admin' and senha == 'admin':
-        session['logado'] = True
-        return redirect('/admin')
+    usuario = Usuario.query.filter_by(email=email, senha=senha).first()
 
-    usuarios = ler_usuarios()
-    for usuario in usuarios:
-        if usuario['nome'] == nome and usuario['senha'] == senha:
-            session['aluno'] = usuario['nome']
-            return render_template('select_game.html',aluno=session['aluno'])
+    if usuario:
+        if usuario.tipo == 'admin':
+            session['logado'] = True
+            return redirect('/admin')
+        else:
+            session['aluno'] = usuario.nome
+            return render_template('select_game.html', aluno=session['aluno'])
 
     flash('Usuário inválido')
     return redirect('/')
 
+@app.route('/cadastro', methods=['POST', 'GET'])
+def cadastro():
+     session.clear()
+     return render_template('cadastrar_usuario.html')
+
 @app.route('/cadastrarUsuario', methods=['POST', 'GET'])
 def cadastrarUsuario():
+    if request.method == 'POST':
+        nome = request.form.get('nome')
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        tipo = request.form.get('tipo')  # 'admin' ou 'usuario'
+
+        # Criar um novo usuário no banco
+        novo_usuario = Usuario(nome=nome, email=email, senha=senha, tipo=tipo)
+        db.session.add(novo_usuario)
+        db.session.commit()
+
+        flash(f'Usuário {nome} cadastrado com sucesso!')
+
+        return redirect('/admin')
+
+    # Se for GET, retorna o formulário de cadastro
+    return render_template('cadastro_usuario.html')
+
+@app.route('/registrarUsuario', methods=['POST'])
+def registrarUsuario():
     nome = request.form.get('nome')
+    email = request.form.get('email')
     senha = request.form.get('senha')
-    user = [
-        {
-            "usuario": nome,
-            "nome": nome,
-            "senha": senha
-        }
-    ]
+    tipo = request.form.get('tipo')  # 'admin' ou 'usuario'
 
-    usuarios = ler_usuarios()
-    usuarios += user
+    # Criar um novo usuário no banco
+    novo_usuario = Usuario(nome=nome, email=email, senha=senha, tipo=tipo)
+    db.session.add(novo_usuario)
+    db.session.commit()
 
-    with open('usuarios.json', 'w') as gravarTemp:
-        json.dump(usuarios, gravarTemp, indent=4)
+    flash(f'Usuário {nome} cadastrado com sucesso!')
 
-    return redirect('/admin')
+    return redirect('/')
 
 @app.route('/excluirUsuario', methods=['POST'])
 def excluirUsuario():
-    session['logado'] = True
-    usuario = request.form.get('usuarioPexcluir')
-    usuarioDict = ast.literal_eval(usuario)
-    nome = usuarioDict['nome']
+    if session.get('logado'):
+        usuario_id = request.form.get('usuario_id')
 
-    usuariosJson = ler_usuarios()
-    if usuarioDict in usuariosJson:
-        usuariosJson.remove(usuarioDict)
+        # Buscar o usuário pelo ID e excluir
+        usuario = Usuario.query.get(usuario_id)
+        if usuario:
+            db.session.delete(usuario)
+            db.session.commit()
 
-        with open('usuarios.json', 'w') as usuarioAexcluir:
-            json.dump(usuariosJson, usuarioAexcluir, indent=4)
+            flash(f'{usuario.nome} EXCLUÍDO com sucesso!')
 
-    flash(f'{nome} EXCLUÍDO')
-    return redirect('/admin')
+        return redirect('/admin')
+    else:
+        return redirect('/')
+
 
 @app.route('/alfabeto', methods=['GET'])
 def alfabeto():
@@ -119,6 +145,7 @@ def preenchaalfabeto():
 def sair():
     session.clear()
     return redirect('/')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
