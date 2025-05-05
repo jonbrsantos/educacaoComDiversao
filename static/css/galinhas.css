@@ -67,14 +67,18 @@ h1 {
 header {
     display: flex;
     text-align: center;
-    margin: 6px 170px 10px;
+    justify-content: center;
+    align-self: center;
     font-size: 1.2em;
     margin-bottom:30px;
 }
 
-.game-area {
+.game-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1); /*ajuste da opacidade*/
+    background: rgba(255, 255, 255, 0.1); 
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
     padding: 5px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

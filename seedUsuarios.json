@@ -1,13 +1,13 @@
 [
     {
         "nome": "Admin",
-        "email": "admin@univesp.com",
+        "email": "admin@univesp.com.br",
         "senha": "admin",
         "tipo": "admin"
     },
     {
         "nome": "Admin2",
-        "email": "admin2@univesp.com",
+        "email": "admin2@univesp.com.br",
         "senha": "admin",
         "tipo": "admin"
     },

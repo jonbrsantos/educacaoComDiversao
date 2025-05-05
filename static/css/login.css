@@ -6,17 +6,16 @@ body {
     min-height: 100vh;
     background:url(../image/login/fundo12.jpg) no-repeat;
     background-size:cover;
-    background-position: center;
+    background-position: top;
     font-family:"DynaPuff", system-ui
     
 }
 
 .container {
-   width: 450px;
-   position: relative;
-   justify-content: space-around;
-   margin-left: -745px;
-   top:270px;
+   width: 500px;
+   position: absolute;
+   justify-content: center;
+   align-items: center;
    background: transparent;
    border:solid 2px rgba(225, 255, 255, .2);
    backdrop-filter: blur(10px);
@@ -24,7 +23,7 @@ body {
    color: #8600d4bb;
    border-radius: 10px;
    padding: 20px 20px;
-   margin-bottom: 280px;
+   margin: 70px;
 }
 
 .container h1 {
@@ -114,5 +113,5 @@ a:hover {
 }
 
 .caixa-registre p a {
-   font-weight: 500;
+   font-weight: 150;
 }
